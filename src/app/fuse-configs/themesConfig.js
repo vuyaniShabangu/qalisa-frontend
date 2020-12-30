@@ -1,11 +1,11 @@
 import { fuseDark, skyBlue } from '@fuse/colors';
-import { lightBlue, red } from '@material-ui/core/colors';
+import { lightBlue, red, orange } from '@material-ui/core/colors';
 
 const themesConfig = {
 	default: {
 		palette: {
 			type: 'light',
-			primary: fuseDark,
+			primary: orange,
 			secondary: {
 				light: skyBlue[100],
 				main: skyBlue[500],
