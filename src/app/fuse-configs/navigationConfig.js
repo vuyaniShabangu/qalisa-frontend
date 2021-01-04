@@ -20,28 +20,28 @@ const navigationConfig = [
 				title: 'Home',
 				translate: 'HOME',
 				type: 'item',
-				icon: 'whatshot',
+				icon: 'home',
 				url: '/home'
 			},
 			{
 				id: 'ventures-component',
 				title: 'Ventures',
 				type: 'item',
-				icon: 'whatshot',
+				icon: 'business',
 				url: '/ventures'
 			},
 			{
 				id: 'miletones-component',
 				title: 'Milestones',
 				type: 'item',
-				icon: 'whatshot',
+				icon: 'emoji_flags',
 				url: '/milestones'
 			},
 			{
 				id: 'meetings-component',
 				title: 'Meetings',
 				type: 'item',
-				icon: 'whatshot',
+				icon: 'calendar_today',
 				url: '/meetings'
 			}
 		]
