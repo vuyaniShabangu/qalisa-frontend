@@ -8,9 +8,9 @@ const useStyles = makeStyles(theme => ({
 	layoutRoot: {}
 }));
 
-function ExamplePage(props) {
+function HomePage(props) {
 	const classes = useStyles(props);
-	const { t } = useTranslation('examplePage');
+	const { t } = useTranslation('homePage');
 
 	return (
 		<FusePageSimple
@@ -38,4 +38,4 @@ function ExamplePage(props) {
 	);
 }
 
-export default ExamplePage;
+export default HomePage;

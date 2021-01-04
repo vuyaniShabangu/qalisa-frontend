@@ -25,7 +25,7 @@ function DemoContent() {
 					pitifully thin compared with the size of the rest of him, waved about helplessly as he looked.
 					"What's happened to me? " he thought. It wasn't a dream.
 				</p>
-				<footer>John Doe</footer>
+				<footer>Vuyani Shabangu</footer>
 			</blockquote>
 			<p>
 				His room, a proper human room although a little too small, lay peacefully between its four familiar
