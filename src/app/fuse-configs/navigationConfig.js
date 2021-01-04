@@ -10,7 +10,7 @@ i18next.addResourceBundle('ar', 'navigation', ar);
 const navigationConfig = [
 	{
 		id: 'applications',
-		title: 'Applications',
+		title: '',
 		translate: 'APPLICATIONS',
 		type: 'group',
 		icon: 'apps',
@@ -22,6 +22,27 @@ const navigationConfig = [
 				type: 'item',
 				icon: 'whatshot',
 				url: '/example'
+			},
+			{
+				id: 'ventures-component',
+				title: 'Ventures',
+				type: 'item',
+				icon: 'whatshot',
+				url: '/ventures'
+			},
+			{
+				id: 'miletones-component',
+				title: 'Milestones',
+				type: 'item',
+				icon: 'whatshot',
+				url: '/milestones'
+			},
+			{
+				id: 'meetings-component',
+				title: 'Meetings',
+				type: 'item',
+				icon: 'whatshot',
+				url: '/meetings'
 			}
 		]
 	}

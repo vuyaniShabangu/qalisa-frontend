@@ -8,7 +8,7 @@ const useStyles = makeStyles(theme => ({
 	layoutRoot: {}
 }));
 
-function ExamplePage(props) {
+function MeetingsPage(props) {
 	const classes = useStyles(props);
 	const { t } = useTranslation('examplePage');
 
@@ -38,4 +38,4 @@ function ExamplePage(props) {
 	);
 }
 
-export default ExamplePage;
+export default MeetingsPage;
