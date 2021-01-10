@@ -81,7 +81,7 @@ export const setUserData = user => async (dispatch, getState) => {
 	/*
     Set User Settings
      */
-	dispatch(setDefaultSettings(user.data.settings));
+	//dispatch(setDefaultSettings(user.data.settings));
 
 	dispatch(setUser(user));
 };
@@ -189,7 +189,7 @@ export const updateUserData = user => async (dispatch, getState) => {
 const initialState = {
 	role: [], // guest
 	data: {
-		displayName: 'Vuyani Shabangu',
+		username: 'Vuyani Shabangu',
 		photoURL: 'assets/images/avatars/vuyani.jpeg',
 		email: 'vuyani@altblack.africa',
 		shortcuts: ['calendar', 'mail', 'contacts', 'todo']

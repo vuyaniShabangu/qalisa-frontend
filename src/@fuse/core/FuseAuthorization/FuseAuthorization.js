@@ -75,8 +75,9 @@ class FuseAuthorization extends Component {
 }
 
 function mapStateToProps({ auth }) {
+	let roles  = auth.user.role.name === "Authenticated"  ? ['admin', 'staff', 'user'] : []
 	return {
-		userRole: auth.user.role
+		userRole: roles
 	};
 }
 

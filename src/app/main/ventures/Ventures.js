@@ -1,6 +1,7 @@
 import DemoContent from '@fuse/core/DemoContent';
 import FusePageSimple from '@fuse/core/FusePageSimple';
 import { makeStyles } from '@material-ui/core/styles';
+import { useSelector } from 'react-redux';
 import React from 'react';
 
 const useStyles = makeStyles(theme => ({

@@ -19,7 +19,7 @@ class Auth extends Component {
 			// Comment the lines which you do not use
 			// this.firebaseCheck(),
 			// this.auth0Check(),
-			// this.jwtCheck()
+			 this.jwtCheck()
 		]).then(() => {
 			this.setState({ waitAuthCheck: false });
 		});
@@ -27,7 +27,9 @@ class Auth extends Component {
 
 	jwtCheck = () =>
 		new Promise(resolve => {
+			alert("sasas");
 			jwtService.on('onAutoLogin', () => {
+				alert("loggin")
 				this.props.showMessage({ message: 'Logging in with JWT' });
 
 				/**

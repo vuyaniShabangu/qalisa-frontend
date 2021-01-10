@@ -1,4 +1,5 @@
 import Ventures from './Ventures';
+import {authRoles} from '../../auth';
 
 
 const VenturesConfig = {
@@ -7,6 +8,7 @@ const VenturesConfig = {
 			config: {}
 		}
 	},
+	auth: authRoles.user, // ['admin']
 	routes: [
 		{
 			path: '/ventures',

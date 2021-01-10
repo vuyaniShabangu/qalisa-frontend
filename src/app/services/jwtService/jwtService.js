@@ -1,6 +1,8 @@
 import FuseUtils from '@fuse/utils/FuseUtils';
 import axios from 'axios';
 import jwtDecode from 'jwt-decode';
+import { useSelector } from 'react-redux';
+
 /* eslint-disable camelcase */
 
 class JwtService extends FuseUtils.EventEmitter {
@@ -28,7 +30,9 @@ class JwtService extends FuseUtils.EventEmitter {
 	};
 
 	handleAuthentication = () => {
-		const access_token = this.getAccessToken();
+		alert("handle");
+		const access_token = window.localStorage.getItem('jwt_access_token');
+		console.log(window.localStorage.getItem('jwt_access_token'));
 
 		if (!access_token) {
 			this.emit('onNoAccessToken');
@@ -61,15 +65,13 @@ class JwtService extends FuseUtils.EventEmitter {
 	signInWithEmailAndPassword = (email, password) => {
 		return new Promise((resolve, reject) => {
 			axios
-				.get('/api/auth', {
-					data: {
-						email,
-						password
-					}
+				.post('https://qalisa-backend.herokuapp.com/auth/local', {
+					identifier: email,
+					password: password
 				})
 				.then(response => {
 					if (response.data.user) {
-						this.setSession(response.data.access_token);
+						this.setSession(response.data.jwt);
 						resolve(response.data.user);
 					} else {
 						reject(response.data.error);
