@@ -30,7 +30,6 @@ class JwtService extends FuseUtils.EventEmitter {
 	};
 
 	handleAuthentication = () => {
-		alert("handle");
 		const access_token = window.localStorage.getItem('jwt_access_token');
 		console.log(window.localStorage.getItem('jwt_access_token'));
 
@@ -83,15 +82,15 @@ class JwtService extends FuseUtils.EventEmitter {
 	signInWithToken = () => {
 		return new Promise((resolve, reject) => {
 			axios
-				.get('/api/auth/access-token', {
+				.get('https://qalisa-backend.herokuapp.com/users/me', {
 					data: {
-						access_token: this.getAccessToken()
+						//access_token: this.getAccessToken()
 					}
 				})
 				.then(response => {
-					if (response.data.user) {
-						this.setSession(response.data.access_token);
-						resolve(response.data.user);
+					if (response.data) {
+						this.setSession(this.getAccessToken());
+						resolve(response.data);
 					} else {
 						this.logout();
 						reject(new Error('Failed to login with token.'));
