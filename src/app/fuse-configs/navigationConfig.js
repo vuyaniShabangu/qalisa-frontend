@@ -43,6 +43,13 @@ const navigationConfig = [
 				type: 'item',
 				icon: 'calendar_today',
 				url: '/meetings'
+			},
+			{
+				id: 'advisor-component',
+				title: 'Advisor Application',
+				type: 'item',
+				icon: 'person',
+				url: '/advisor-application'
 			}
 		]
 	}

@@ -36,14 +36,13 @@ function HomePage(props) {
 							<FuseAnimate animation="transition.slideUpIn" delay={400}>
 								<Typography variant="h3" color="inherit" className="font-800 leading-tight">
 									Welcome <br />
-									to the <br /> FUSE React!
+									to Qalisa!<br /> 
 								</Typography>
 							</FuseAnimate>
 
 							<FuseAnimate delay={500}>
 								<Typography variant="subtitle1" color="inherit" className="mt-32">
-									Powerful and professional admin template for Web Applications, CRM, CMS, Admin
-									Panels and more.
+									A platform to help provide guidiance to new business ventures right from the idea phase.
 								</Typography>
 							</FuseAnimate>
 						</div>

@@ -18,7 +18,7 @@ function FooterLayout1(props) {
 				style={{ backgroundColor: footerTheme.palette.background.paper }}
 			>
 				<Toolbar className="min-h-48 md:min-h-64 px-8 sm:px-12 py-0 flex items-center overflow-x-auto">
-					<Typography>Footer</Typography>
+					<Typography>&copy; 2021 Qalisa</Typography>
 				</Toolbar>
 			</AppBar>
 		</ThemeProvider>

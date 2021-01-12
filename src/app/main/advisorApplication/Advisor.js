@@ -9,7 +9,7 @@ const useStyles = makeStyles(theme => ({
 	layoutRoot: {}
 }));
 
-function VenturesPage(props) {
+function AdvisorPage(props) {
 	const classes = useStyles(props);
 	const user = useSelector(({ auth }) => auth.user);
 
@@ -20,16 +20,16 @@ function VenturesPage(props) {
 			}}
 			header={
 				<div className="p-24 justify-center">
-					<h2>Ventures</h2>
+					<h2>Advisor Application</h2>
 				</div>
 			}
 			content={
 				<div className="p-24 justify-center">
-					{(user.ventures.length > 0) ? <VentureView venture={user.ventures[0]} /> : <VentureForm />}
+					{/*(user.ventures.length > 0) ? <VentureView venture={user.ventures[0]} /> : <VentureForm />*/}
 				</div>
 			}
 		/>
 	);
 }
 
-export default VenturesPage;
+export default AdvisorPage;
