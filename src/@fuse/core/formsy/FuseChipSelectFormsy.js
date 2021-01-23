@@ -47,7 +47,7 @@ function FuseChipSelectFormsy(props) {
 			error={Boolean((!props.isPristine && props.showRequired) || errorMessage)}
 			className={clsx(
 				props.className,
-				'z-10',
+				'z-0',
 				props.showRequired ? 'required' : '',
 				props.showError ? 'error' : null
 			)}

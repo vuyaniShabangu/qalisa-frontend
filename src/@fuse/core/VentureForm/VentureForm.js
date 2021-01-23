@@ -1,8 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { TextFieldFormsy, SelectFormsy, FuseChipSelectFormsy } from '@fuse/core/formsy';
 import Button from '@material-ui/core/Button';
-import Icon from '@material-ui/core/Icon';
-import IconButton from '@material-ui/core/IconButton';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import MenuItem from '@material-ui/core/MenuItem';
 import Formsy from 'formsy-react';
@@ -15,13 +13,18 @@ import Instagram from '@material-ui/icons/Instagram';
 import axios from 'axios';
 import jwtService from 'app/services/jwtService';
 import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { hideMessage, showMessage } from 'app/store/fuse/messageSlice';
+
 
 
 
 function VentureForm(props) {
 	const user = useSelector(({ auth }) => auth.user);
+	const dispatch = useDispatch();
 
 	const [isFormValid, setIsFormValid] = useState(false);
+	const [isWaitingForRequest, setIsWaitingForRequest] = useState(false);
 	const values = {
 		someDate: "2017-05-24"
 	};
@@ -35,10 +38,10 @@ function VentureForm(props) {
 	}
 
 	function handleSubmit(model) {
-		//dispatch(submitLoginWithFireBase(model));
-		model. entrepreneur = user.id;
+		model.entrepreneur = user.id;
 		console.log(model);
 		return new Promise((resolve, reject) => {
+			setIsWaitingForRequest(true);
 			axios
 				.post('https://qalisa-backend.herokuapp.com/ventures', {
 					...model,
@@ -47,19 +50,22 @@ function VentureForm(props) {
 					}
 				})
 				.then(response => {
-					alert("here")
-					console.log(response.data);
-					if (response.data.user) {
-						//this.setSession(response.data.jwt);
-						console.log(response.data.user);
-						resolve(response.data.user);
+					console.log(response);
+					if (response.status >= 200 && response.status <= 299) {
+						console.log(response.data);
+						dispatch(showMessage({ message: "Your venture has been registered for review." }));
+						window.location.reload();
+						resolve(response.data);
 					} else {
-						console.log(response.data.error);
+						console.log(response);
+						dispatch(showMessage({ message: "Your venture could not be registed, please try again later." }));
 						reject(response.data.error);
 					}
+				}).catch(error => {
+					console.log(error)
+					dispatch(showMessage({ message: "Your venture could not be registed, please try again later." }));
 				});
 		});
-		console.log(model);
 	}
 
 	const clientTypeSuggestions = ['B2B', 'B2B2B', 'B2B2G', 'B2C', 'C2C', 'Governments (B2G)', 'Non-profits'].map(item => ({
@@ -81,7 +87,7 @@ function VentureForm(props) {
 
 
 	return (
-		<div className="max-w-md">
+		<div className="max-w-md m-32">
 			<h1>Add your venture</h1>
 			<Formsy
 				onValidSubmit={handleSubmit}
@@ -206,7 +212,7 @@ function VentureForm(props) {
 
 				<SelectFormsy
 					className="mb-16"
-					name="related-outlined"
+					name="stage"
 					label="Stage"
 					variant="outlined"
 				>
@@ -280,10 +286,11 @@ function VentureForm(props) {
 				/>
 
 				<FuseChipSelectFormsy
-					className="mb-16"
+					className="mb-16 z-0"
 					name="countries"
 					placeholder=""
-					variant="outlined"
+					variant="standard"
+					style=""
 					textFieldProps={{
 						label: 'Countries',
 						InputLabelProps: {
@@ -418,8 +425,6 @@ function VentureForm(props) {
 					}}
 					variant="outlined"
 				/>
-
-
 
 				<Button
 					type="submit"

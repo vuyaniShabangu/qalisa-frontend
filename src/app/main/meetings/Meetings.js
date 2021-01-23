@@ -22,14 +22,13 @@ function MeetingsPage(props) {
 			}
 			contentToolbar={
 				<div className="px-24">
-					<h4>Content Toolbar here</h4>
+					<h4>View meetings</h4>
 				</div>
 			}
 			content={
 				<div className="p-24">
-					<h4>Content</h4>
+					<h4>Meetings</h4>
 					<br />
-					<DemoContent />
 				</div>
 			}
 		/>

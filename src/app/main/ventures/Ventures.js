@@ -4,6 +4,7 @@ import FusePageSimple from '@fuse/core/FusePageSimple';
 import { makeStyles } from '@material-ui/core/styles';
 import { useSelector } from 'react-redux';
 import React from 'react';
+import clsx from 'clsx';
 
 const useStyles = makeStyles(theme => ({
 	layoutRoot: {}
@@ -12,6 +13,7 @@ const useStyles = makeStyles(theme => ({
 function VenturesPage(props) {
 	const classes = useStyles(props);
 	const user = useSelector(({ auth }) => auth.user);
+	console.log(user);
 
 	return (
 		<FusePageSimple
@@ -24,7 +26,7 @@ function VenturesPage(props) {
 				</div>
 			}
 			content={
-				<div className="p-24 justify-center">
+				<div className='ml-24'>
 					{(user.ventures.length > 0) ? <VentureView venture={user.ventures[0]} /> : <VentureForm />}
 				</div>
 			}

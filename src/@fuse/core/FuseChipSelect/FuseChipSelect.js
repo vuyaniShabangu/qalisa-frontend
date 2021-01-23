@@ -9,6 +9,8 @@ import clsx from 'clsx';
 import React from 'react';
 import Select from 'react-select';
 import Creatable from 'react-select/creatable';
+import { NativeSelect } from '@material-ui/core';
+
 
 const useStyles = makeStyles(theme => ({
 	root: {
@@ -79,7 +81,7 @@ const useStyles = makeStyles(theme => ({
 		margin: 0
 	},
 	paper: {
-		position: 'absolute',
+		//position: 'absolute',
 		zIndex: 2,
 		marginTop: theme.spacing(),
 		left: 0,
@@ -223,7 +225,7 @@ function FuseChipSelect(props) {
 	};
 
 	return props.variant === 'fixed' ? (
-		<Select classNamePrefix="fuse-chip-select" {...props} components={components} onChange={handleOnChange} />
+		<NativeSelect classNamePrefix="fuse-chip-select" {...props} components={components} onChange={handleOnChange} />
 	) : (
 		<Creatable classNamePrefix="fuse-chip-select" {...props} components={components} onChange={handleOnChange} />
 	);
