@@ -1,5 +1,6 @@
-import { TextFieldFormsy } from '@fuse/core/formsy';
+import { TextFieldFormsy, SelectFormsy, CheckboxFormsy } from '@fuse/core/formsy';
 import Button from '@material-ui/core/Button';
+import MenuItem from '@material-ui/core/MenuItem';
 import Icon from '@material-ui/core/Icon';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import Formsy from 'formsy-react';
@@ -47,8 +48,8 @@ function JWTRegisterTab(props) {
 				<TextFieldFormsy
 					className="mb-16"
 					type="text"
-					name="displayName"
-					label="Display name"
+					name="username"
+					label="Username"
 					validations={{
 						minLength: 4
 					}}
@@ -67,6 +68,16 @@ function JWTRegisterTab(props) {
 					variant="outlined"
 					required
 				/>
+
+				<SelectFormsy
+					className="mb-16"
+					name="type"
+					label="Type"
+					variant="outlined"
+				>
+					<MenuItem value="entrepreneur">Entrepreneur</MenuItem>
+					<MenuItem value="advisor">Advisor</MenuItem>
+				</SelectFormsy>
 
 				<TextFieldFormsy
 					className="mb-16"
@@ -132,6 +143,19 @@ function JWTRegisterTab(props) {
 					}}
 					variant="outlined"
 					required
+				/>
+
+				<CheckboxFormsy
+					className="my-16"
+					name="accept"
+					value={false}
+					label="Do you accept the Terms and Conditions"
+					validations={{
+						equals: true,
+					}}
+					validationErrors={{
+						equals: "You will need to accpet the terms and conditions before registering."
+					}}
 				/>
 
 				<Button

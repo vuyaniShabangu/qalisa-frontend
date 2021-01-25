@@ -1,7 +1,6 @@
 import FuseUtils from '@fuse/utils/FuseUtils';
 import axios from 'axios';
 import jwtDecode from 'jwt-decode';
-import { useSelector } from 'react-redux';
 
 /* eslint-disable camelcase */
 
@@ -50,9 +49,12 @@ class JwtService extends FuseUtils.EventEmitter {
 
 	createUser = data => {
 		return new Promise((resolve, reject) => {
-			axios.post('/api/auth/register', data).then(response => {
+			console.log(data);
+			axios.post('https://qalisa-backend.herokuapp.com/auth/local/register', data).then(response => {
+				console.log(response.data);
 				if (response.data.user) {
-					this.setSession(response.data.access_token);
+					console.log(response.data.user);
+					this.setSession(response.data.jwt);
 					resolve(response.data.user);
 				} else {
 					reject(response.data.error);

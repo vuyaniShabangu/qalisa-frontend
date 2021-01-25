@@ -57,24 +57,11 @@ function Register() {
 					>
 						<CardContent className="flex flex-col items-center justify-center w-full py-96 max-w-320">
 							<FuseAnimate delay={300}>
-								<div className="flex items-center justif-center mb-32">
-									<img className="logo-icon w-48" src="assets/images/logos/fuse.svg" alt="logo" />
-									<div className="border-l-1 mr-4 w-1 h-40" />
-									<div>
-										<Typography className="text-24 font-800 logo-text" color="inherit">
-											FUSE
-										</Typography>
-										<Typography
-											className="text-16 tracking-widest -mt-8 font-700"
-											color="textSecondary"
-										>
-											REACT
-										</Typography>
-									</div>
+								<div className="flex items-center mb-32">
+									<img className="logo-icon w-95" src="assets/images/logos/qalisaHubBright.png" alt="logo" />
 								</div>
 							</FuseAnimate>
-
-							<Tabs
+							{/*<Tabs
 								value={selectedTab}
 								onChange={handleTabChange}
 								variant="fullWidth"
@@ -103,7 +90,7 @@ function Register() {
 									className="min-w-0"
 									label="Auth0"
 								/>
-							</Tabs>
+							</Tabs>*/}
 
 							{selectedTab === 0 && <JWTRegisterTab />}
 							{selectedTab === 1 && <FirebaseRegisterTab />}
@@ -117,9 +104,9 @@ function Register() {
 									Login
 								</Link>
 							</div>
-							<Link className="font-medium mt-8" to="/">
+							{/*<Link className="font-medium mt-8" to="/">
 								Back to Dashboard
-							</Link>
+							</Link>*/}
 						</div>
 					</Card>
 
@@ -130,14 +117,13 @@ function Register() {
 							<FuseAnimate animation="transition.slideUpIn" delay={400}>
 								<Typography variant="h3" color="inherit" className="font-800 leading-tight">
 									Welcome <br />
-									to the <br /> FUSE React!
+									to Qalisa!<br />
 								</Typography>
 							</FuseAnimate>
 
 							<FuseAnimate delay={500}>
 								<Typography variant="subtitle1" color="inherit" className="mt-32">
-									Powerful and professional admin template for Web Applications, CRM, CMS, Admin
-									Panels and more.
+									A platform to help provide guidiance to new business ventures right from the idea phase.
 								</Typography>
 							</FuseAnimate>
 						</div>

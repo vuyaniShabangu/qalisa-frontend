@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { TextFieldFormsy, SelectFormsy, FuseChipSelectFormsy } from '@fuse/core/formsy';
 import Button from '@material-ui/core/Button';
 import InputAdornment from '@material-ui/core/InputAdornment';
@@ -14,7 +14,8 @@ import axios from 'axios';
 import jwtService from 'app/services/jwtService';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { hideMessage, showMessage } from 'app/store/fuse/messageSlice';
+import { showMessage } from 'app/store/fuse/messageSlice';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 
 
@@ -87,9 +88,9 @@ function VentureForm(props) {
 
 
 	return (
-		<div className="max-w-md m-32">
+		< div className="max-w-md m-32" >
 			<h1>Add your venture</h1>
-			<Formsy
+			{isWaitingForRequest ? <CircularProgress /> : <Formsy
 				onValidSubmit={handleSubmit}
 				onValid={enableButton}
 				onInvalid={disableButton}
@@ -290,7 +291,6 @@ function VentureForm(props) {
 					name="countries"
 					placeholder=""
 					variant="standard"
-					style=""
 					textFieldProps={{
 						label: 'Countries',
 						InputLabelProps: {
@@ -437,9 +437,9 @@ function VentureForm(props) {
 				>
 					Submit Venture
 				</Button>
-			</Formsy>
+			</Formsy>}
 
-		</div>
+		</div >
 	);
 }
 

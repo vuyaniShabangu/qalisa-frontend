@@ -31,11 +31,7 @@ const useStyles = makeStyles(theme => ({
 
 function Login() {
 	const classes = useStyles();
-	const [selectedTab, setSelectedTab] = useState(0);
-
-	function handleTabChange(event, value) {
-		setSelectedTab(value);
-	}
+	const [selectedTab] = useState(0);
 
 	return (
 		<div
@@ -103,9 +99,9 @@ function Login() {
 									Register
 								</Link>
 							</div>
-							<Link className="font-medium mt-8" to="/">
+							{/*<Link className="font-medium mt-8" to="/">
 								Back to Dashboard
-							</Link>
+							</Link>*/}
 						</div>
 					</Card>
 

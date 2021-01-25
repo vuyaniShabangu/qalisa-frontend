@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { TextFieldFormsy, SelectFormsy, RadioGroupFormsy } from '@fuse/core/formsy';
 import Button from '@material-ui/core/Button';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
@@ -10,6 +10,7 @@ import jwtService from 'app/services/jwtService';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { showMessage } from 'app/store/fuse/messageSlice';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 
 
@@ -20,9 +21,6 @@ function VentureForm(props) {
 
 	const [isFormValid, setIsFormValid] = useState(false);
 	const [isWaitingForRequest, setIsWaitingForRequest] = useState(false);
-	const values = {
-		someDate: "2017-05-24"
-	};
 
 	function disableButton() {
 		setIsFormValid(false);
@@ -68,6 +66,7 @@ function VentureForm(props) {
 					console.log(error)
 					dispatch(showMessage({ message: "Your application could not be registed, please try again later." }));
 				});
+			setIsWaitingForRequest(true);
 		});
 	}
 
@@ -77,7 +76,7 @@ function VentureForm(props) {
 	return (
 		<div className="max-w-md m-32">
 			<h1>Apply to be an advisor</h1>
-			<Formsy
+			{ isWaitingForRequest ? <CircularProgress/> : <Formsy
 				onValidSubmit={handleSubmit}
 				onValid={enableButton}
 				onInvalid={disableButton}
@@ -457,7 +456,7 @@ function VentureForm(props) {
 				>
 					Submit Advisor Application
 				</Button>
-			</Formsy>
+			</Formsy>}
 
 		</div>
 	);

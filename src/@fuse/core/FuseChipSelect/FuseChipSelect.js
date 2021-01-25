@@ -7,7 +7,6 @@ import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 import clsx from 'clsx';
 import React from 'react';
-import Select from 'react-select';
 import Creatable from 'react-select/creatable';
 import { NativeSelect } from '@material-ui/core';
 

@@ -16,9 +16,9 @@ function VentureView(props) {
 				className="rounded-6"
 			/>}
 
-			{(props.venture.approved == null) && <Alert className="mb-32 mt-32" severity="info">Status: Your venture application is still under review.</Alert>}
-			{(props.venture.approved == true) && <Alert className="mb-32 mt-32" severity="success">Status: Your venture has been approved.</Alert>}
-			{(props.venture.approved == false) && <Alert className="mb-32 mt-32" severity="error">Status: Your venture has been rejected. Please check your email for further information.</Alert>}
+			{(props.venture.approved === null) && <Alert className="mb-32 mt-32" severity="info">Status: Your venture application is still under review.</Alert>}
+			{(props.venture.approved === true) && <Alert className="mb-32 mt-32" severity="success">Status: Your venture has been approved.</Alert>}
+			{(props.venture.approved === false) && <Alert className="mb-32 mt-32" severity="error">Status: Your venture has been rejected. Please check your email for further information.</Alert>}
 
 			<Typography variant="h3" color="inherit" className="font-800 leading-tight">
 				{props.venture.companyName}

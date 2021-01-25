@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { TextFieldFormsy, SelectFormsy } from '@fuse/core/formsy';
+import { TextFieldFormsy, SelectFormsy, FuseChipSelectFormsy } from '@fuse/core/formsy';
 import MenuItem from '@material-ui/core/MenuItem';
 import Button from '@material-ui/core/Button';
 import Formsy from 'formsy-react';
@@ -12,7 +12,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 
 
 
-function MilestoneForm(props) {
+function MeetingForm(props) {
 	const user = useSelector(({ auth }) => auth.user);
 	const dispatch = useDispatch();
 
@@ -42,7 +42,10 @@ function MilestoneForm(props) {
 				.then(response => {
 					console.log(response);
 					if (response.status >= 200 && response.status <= 299) {
-						setPossibleUsers(response.data);
+						setPossibleUsers(response.data.map(user => ({
+							value: user.id,
+							label: user.username
+						})));
 					} else {
 						console.log(response);
 					}
@@ -57,11 +60,11 @@ function MilestoneForm(props) {
 	}, []);
 
 	function handleSubmit(model) {
-		model.assigner = user.id;
 		return new Promise((resolve, reject) => {
 			setIsWaitingForRequest(true);
+			model.attendants = model.attendants.map(attendant => (attendant.value))
 			axios
-				.post('https://qalisa-backend.herokuapp.com/milestones', {
+				.post('https://qalisa-backend.herokuapp.com/meetings', {
 					...model,
 					headers: {
 						'Authorization': 'Bearer ' + jwtService.getAccessToken()
@@ -71,17 +74,17 @@ function MilestoneForm(props) {
 					console.log(response);
 					if (response.status >= 200 && response.status <= 299) {
 						console.log(response.data);
-						dispatch(showMessage({ message: "The milestone has been added." }));
+						dispatch(showMessage({ message: "The meeting has been added." }));
 						window.location.reload();
 						resolve(response.data);
 					} else {
 						console.log(response);
-						dispatch(showMessage({ message: "Your milestone could not be added, please try again later." }));
+						dispatch(showMessage({ message: "Your meeting could not be added, please try again later." }));
 						reject(response.data.error);
 					}
 				}).catch(error => {
 					console.log(error)
-					dispatch(showMessage({ message: "Your milestone could not be added, please try again later." }));
+					dispatch(showMessage({ message: "Your meeting could not be added, please try again later." }));
 				});
 			setIsWaitingForRequest(false);
 		});
@@ -92,7 +95,7 @@ function MilestoneForm(props) {
 
 	return (
 		<div className="max-w-md m-32">
-			<h1>Create a new milestone</h1>
+			<h1>Create a new meeting</h1>
 			{isWaitingForRequest ? <CircularProgress /> : <Formsy
 				onValidSubmit={handleSubmit}
 				onValid={enableButton}
@@ -102,8 +105,8 @@ function MilestoneForm(props) {
 				<TextFieldFormsy
 					className="mb-16"
 					type="text"
-					name="title"
-					label="Title"
+					name="url"
+					label="Link"
 					validations={{
 						minLength: 1
 					}}
@@ -117,8 +120,8 @@ function MilestoneForm(props) {
 				<TextFieldFormsy
 					className="mb-16"
 					type="text"
-					name="description"
-					label="Description"
+					name="inviteMessage"
+					label="Invite message"
 					multiline
 					rows={4}
 					validations={{
@@ -131,59 +134,32 @@ function MilestoneForm(props) {
 					required
 				/>
 
-				{/*<TextFieldFormsy
+				<FuseChipSelectFormsy
 					className="mb-16"
-					type="text"
-					name="progressUpdate"
-					label="Progress Update"
-					multiline
-					rows={4}
-					validations={{
-						minLength: 1
+					name="attendants"
+					placeholder=""
+					variant="outlined"
+					textFieldProps={{
+						label: 'Attendants',
+						InputLabelProps: {
+							shrink: true
+						},
+						variant: 'outlined'
 					}}
+					options={possibleUsers}
+					isMulti
+					validations={{ minLength: 1 }}
 					validationErrors={{
-						minLength: 'Min character length is 1'
+						minLength: 'You need to select at least 1'
 					}}
-					variant="outlined"
-					required
-				/>*/}
-
-				<SelectFormsy
-					className="mb-16"
-					name="assignee"
-					label="Assign to"
-					variant="outlined"
-				>
-					{
-						possibleUsers.map(item => (
-							<MenuItem value={item.id}>{item.username}</MenuItem>
-						))
-					}
-				</SelectFormsy>
-
-				<TextFieldFormsy
-					className="mb-16"
-					type="date"
-					name="startDate"
-					label="Start Date"
-					InputLabelProps={{
-						shrink: true,
-					}}
-					validations={{
-						minLength: 4
-					}}
-					validationErrors={{
-						minLength: 'Min character length is 4'
-					}}
-					variant="outlined"
 					required
 				/>
 
 				<TextFieldFormsy
 					className="mb-16"
-					type="date"
-					name="endDate"
-					label="End Date"
+					type="datetime-local"
+					name="datetime"
+					label="Date & Time"
 					InputLabelProps={{
 						shrink: true,
 					}}
@@ -214,4 +190,4 @@ function MilestoneForm(props) {
 	);
 }
 
-export default React.memo(MilestoneForm);
+export default React.memo(MeetingForm);
