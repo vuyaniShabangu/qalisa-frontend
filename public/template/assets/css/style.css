@@ -4644,7 +4644,7 @@ hero-btn {
     font-weight: 500;
     margin-bottom: 22px;
     text-transform: uppercase;
-    color: #eb566c;
+    color: #61dafb;
     display: inline-block;
     position: relative;
     padding-left: 100px;
@@ -4665,7 +4665,7 @@ hero-btn {
     content: "";
     width: 70px;
     height: 2px;
-    background: #eb566c;
+    background: #61dafb;
     top: 0;
     left: 0px;
     top: 50%;
