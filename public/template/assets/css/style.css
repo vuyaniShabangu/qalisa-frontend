@@ -3405,7 +3405,7 @@ hero-btn {
     position: relative;
     border-style: solid;
     border-width: 1px;
-    border-top-color: #14435c;
+    border-top-color: #ff911f;
     border-bottom-color: transparent;
     border-left-color: transparent;
     border-right-color: transparent;
@@ -3425,7 +3425,7 @@ hero-btn {
 /* line 645, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_common.scss */
 
 .preloader .preloader-circle2 {
-    border-top-color: #0078ff;
+    border-top-color: #ff911f;
 }
 
 
