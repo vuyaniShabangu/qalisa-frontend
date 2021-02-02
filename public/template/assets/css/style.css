@@ -137,6 +137,12 @@
 
 /* line 58, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_variables.scss */
 
+
+
+.logo-image {
+    width: 150px;
+}
+
 .boxed-btn {
     background: #fff;
     color: #14435c !important;
