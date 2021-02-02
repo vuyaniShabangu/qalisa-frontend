@@ -1,5 +1,6 @@
 import { authRoles } from 'app/auth';
-import Register from './Register';
+import RegisterAdvisor from './RegisterAdvisor';
+import RegisterEntrepreneur from './RegisterEntrepreneur';
 
 const RegisterConfig = {
 	settings: {
@@ -26,8 +27,12 @@ const RegisterConfig = {
 	auth: authRoles.onlyGuest,
 	routes: [
 		{
-			path: '/register',
-			component: Register
+			path: '/register-entrepreneur',
+			component: RegisterEntrepreneur
+		},
+		{
+			path: '/register-advisor',
+			component: RegisterAdvisor
 		}
 	]
 };

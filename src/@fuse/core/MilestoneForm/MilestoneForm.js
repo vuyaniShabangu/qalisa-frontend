@@ -49,12 +49,12 @@ function MilestoneForm(props) {
 				}).catch(error => {
 					console.log(error);
 					setPossibleUsers([]);
-					dispatch(showMessage({ message: "There retrieving possible users for this milestone." }));
+					dispatch(showMessage({ message: "There was an error in retrieving users for this milestone." }));
 				});
 		}
 		getUsers()
 		setIsWaitingForRequest(false);
-	}, []);
+	}, [dispatch]);
 
 	function handleSubmit(model) {
 		model.assigner = user.id;

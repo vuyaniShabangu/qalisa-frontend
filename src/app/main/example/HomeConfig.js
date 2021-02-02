@@ -1,5 +1,6 @@
 import i18next from 'i18next';
 import Home from './Home';
+import {authRoles} from '../../auth';
 import en from './i18n/en';
 import tr from './i18n/tr';
 import ar from './i18n/ar';
@@ -14,6 +15,7 @@ const HomeConfig = {
 			config: {}
 		}
 	},
+	auth: authRoles.user, // ['admin']
 	routes: [
 		{
 			path: '/home',

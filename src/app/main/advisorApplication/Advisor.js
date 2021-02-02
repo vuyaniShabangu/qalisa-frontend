@@ -7,6 +7,7 @@ import jwtService from 'app/services/jwtService';
 import { useDispatch } from 'react-redux';
 import { showMessage } from 'app/store/fuse/messageSlice';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles(theme => ({
 	layoutRoot: {}
@@ -45,24 +46,16 @@ function AdvisorPage(props) {
 
 		fetchData();
 
-	}, []);
+	}, [dispatch]);
 
 	return (
-		<FusePageSimple
-			classes={{
-				root: classes.layoutRoot
-			}}
-			header={
-				<div className="p-24 justify-center">
-					<h2>Advisor Application</h2>
-				</div>
-			}
-			content={
-				<div className="p-24 justify-center">
-					{data.isFetching ? <CircularProgress /> : ((data.advisorApplicationInfo === null || data.advisorApplicationInfo.length === 0) ? <AdvisorApplicationForm /> : <h2>Your adivsor application is currently being processed.</h2>)}
-				</div >
-			}
-		/>
+
+		<div className="justify-center">
+			{data.isFetching ? <CircularProgress /> : ((data.advisorApplicationInfo === null || data.advisorApplicationInfo.length === 0) ? <AdvisorApplicationForm /> : <Typography variant="h5" color="inherit" className="font-600 leading-tight mb-32">
+				Thank you! Your advisor application is currently being processed
+			</Typography>)}
+		</div >
+
 	);
 }
 

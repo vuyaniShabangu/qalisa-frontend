@@ -136,7 +136,7 @@ export const logoutUser = () => async (dispatch, getState) => {
 		}
 	}
 
-	dispatch(setInitialSettings());
+	//dispatch(setInitialSettings());
 
 	return dispatch(userLoggedOut());
 };

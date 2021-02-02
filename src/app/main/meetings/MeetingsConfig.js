@@ -1,4 +1,5 @@
 import Meetings from './Meetings';
+import {authRoles} from '../../auth';
 
 
 const MeetingsConfig = {
@@ -7,6 +8,7 @@ const MeetingsConfig = {
 			config: {}
 		}
 	},
+	auth: authRoles.user, // ['admin']
 	routes: [
 		{
 			path: '/meetings',

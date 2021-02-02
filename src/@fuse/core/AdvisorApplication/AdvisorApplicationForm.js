@@ -11,8 +11,7 @@ import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { showMessage } from 'app/store/fuse/messageSlice';
 import CircularProgress from '@material-ui/core/CircularProgress';
-
-
+import Typography from '@material-ui/core/Typography';
 
 
 function VentureForm(props) {
@@ -30,13 +29,13 @@ function VentureForm(props) {
 		setIsFormValid(true);
 	}
 
-	function toBoolean(value){
+	function toBoolean(value) {
 		if (value && typeof value === "string") {
-			 if (value.toLowerCase() === "true") return true;
-			 if (value.toLowerCase() === "false") return false;
+			if (value.toLowerCase() === "true") return true;
+			if (value.toLowerCase() === "false") return false;
 		}
 		return value;
-	 }
+	}
 
 	function handleSubmit(model) {
 		model.user = user.id;
@@ -74,9 +73,11 @@ function VentureForm(props) {
 
 
 	return (
-		<div className="max-w-md m-32">
-			<h1>Apply to be an advisor</h1>
-			{ isWaitingForRequest ? <CircularProgress/> : <Formsy
+		<div className="max-w-lg">
+			<Typography variant="h3" color="inherit" className="font-700 leading-tight mb-32">
+				Complete your advisor application
+			</Typography>
+			{ isWaitingForRequest ? <CircularProgress /> : <Formsy
 				onValidSubmit={handleSubmit}
 				onValid={enableButton}
 				onInvalid={disableButton}

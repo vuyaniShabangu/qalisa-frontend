@@ -7,7 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import clsx from 'clsx';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import JWTLoginTab from './tabs/JWTLoginTab';
+import JWTRegisterTab from './tabs/JWTRegisterTab';
 
 const useStyles = makeStyles(theme => ({
 	root: {
@@ -19,7 +19,7 @@ const useStyles = makeStyles(theme => ({
 	},
 	leftSection: {},
 	rightSection: {
-		background: `linear-gradient(to right, ${theme.palette.primary.dark} 0%, ${darken(
+		background: `linear-gradient(to left, ${theme.palette.primary.dark} 0%, ${darken(
 			theme.palette.primary.dark,
 			0.5
 		)} 100%)`,
@@ -27,7 +27,7 @@ const useStyles = makeStyles(theme => ({
 	}
 }));
 
-function Login() {
+function RegisterAdvisor() {
 	const classes = useStyles();
 
 	return (
@@ -48,24 +48,19 @@ function Login() {
 					>
 						<CardContent className="flex flex-col items-center justify-center w-full py-96 max-w-320">
 							<FuseAnimate delay={300}>
-								<div className="flex items-center mb-32">
+								<div className="flex items-center mb-25">
 									<img className="logo-icon w-95" src="assets/images/logos/qalisaHubBright.png" alt="logo" />
 								</div>
 							</FuseAnimate>
 
-							<JWTLoginTab />
+							<JWTRegisterTab userType="advisor" />
 						</CardContent>
 
 						<div className="flex flex-col items-center justify-center pb-32">
 							<div>
-								<span className="font-medium mr-8">Don't have an account?</span>
-								<br/>
-								<Link className="font-medium" to="/register-entrepreneur">
-									Register as an entrepreneur
-								</Link>
-								<br/>
-								<Link className="font-medium" to="/register-advisor">
-									Register as an advisor
+								<span className="font-medium mr-8">Already have an account?</span>
+								<Link className="font-medium" to="/login">
+									Login
 								</Link>
 							</div>
 						</div>
@@ -74,11 +69,11 @@ function Login() {
 					<div
 						className={clsx(classes.rightSection, 'hidden md:flex flex-1 items-center justify-center p-64')}
 					>
-						<div className="max-w-320">
+						<div className="max-w-400">
 							<FuseAnimate animation="transition.slideUpIn" delay={400}>
 								<Typography variant="h3" color="inherit" className="font-800 leading-tight">
-									Welcome <br />
-									to Qalisa!<br />
+									Register as an
+									advisor on Qalisa!<br />
 								</Typography>
 							</FuseAnimate>
 
@@ -95,4 +90,4 @@ function Login() {
 	);
 }
 
-export default Login;
+export default RegisterAdvisor;

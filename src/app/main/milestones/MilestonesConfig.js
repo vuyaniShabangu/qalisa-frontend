@@ -1,4 +1,5 @@
 import Milestones from './Milestones';
+import {authRoles} from '../../auth';
 
 
 const MilestonesConfig = {
@@ -7,6 +8,7 @@ const MilestonesConfig = {
 			config: {}
 		}
 	},
+	auth: authRoles.user, // ['admin']
 	routes: [
 		{
 			path: '/milestones',

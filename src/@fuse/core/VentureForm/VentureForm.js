@@ -16,6 +16,7 @@ import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { showMessage } from 'app/store/fuse/messageSlice';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import Typography from '@material-ui/core/Typography';
 
 
 
@@ -88,8 +89,10 @@ function VentureForm(props) {
 
 
 	return (
-		< div className="max-w-md m-32" >
-			<h1>Add your venture</h1>
+		< div className="max-w-lg" >
+			<Typography variant="h3" color="inherit" className="font-700 leading-tight mb-32">
+				Add your venture
+			</Typography>
 			{isWaitingForRequest ? <CircularProgress /> : <Formsy
 				onValidSubmit={handleSubmit}
 				onValid={enableButton}

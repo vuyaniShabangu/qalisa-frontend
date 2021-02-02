@@ -15,21 +15,15 @@ function VenturesPage(props) {
 	console.log(user);
 
 	return (
-		<FusePageSimple
-			classes={{
-				root: classes.layoutRoot
-			}}
-			header={
-				<div className="p-24 justify-center">
-					<h2>Ventures</h2>
-				</div>
-			}
-			content={
-				<div className='ml-24'>
-					{(user.ventures.length > 0) ? <VentureView venture={user.ventures[0]} /> : <VentureForm />}
-				</div>
-			}
-		/>
+
+
+
+
+		<div className="justify-center">
+			{(user.ventures.length > 0) ? <VentureView venture={user.ventures[0]} /> : <VentureForm />}
+		</div>
+
+
 	);
 }
 
