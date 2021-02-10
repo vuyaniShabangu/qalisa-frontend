@@ -5384,7 +5384,7 @@ hero-btn {
     line-height: 13px;
     font-family: "Roboto", sans-serif;
     position: relative;
-    color: #e94d65;
+    color: #61dafb;
     font-weight: 300;
     font-size: 14px;
     display: block;
@@ -5403,7 +5403,7 @@ hero-btn {
     left: 0;
     top: 50%;
     transform: translateY(-50%);
-    background: #e94d65;
+    background: #61dafb;
 }
 
 
@@ -5546,7 +5546,7 @@ hero-btn {
 /* line 15, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_team.scss */
 
 .team-area .single-team .team-caption span {
-    color: #ff2143;
+    color: #61dafb;
     font-size: 14px;
     font-weight: 300;
     font-family: "Roboto", sans-serif;
@@ -5567,7 +5567,7 @@ hero-btn {
     left: -47px;
     top: 50%;
     transform: translateY(-50%);
-    background: #ff2143;
+    background: #61dafb;
 }
 
 
