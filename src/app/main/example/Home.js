@@ -23,12 +23,8 @@ function HomePage(props) {
 			}}
 
 			content={
-				<div
-					className={clsx(classes.rightSection, 'hidden md:flex flex-1 items-center justify-center p-60')}
-				>
-					<div className="max-w-600">
+				<div className="p-32 justify-center">
 						{user.type == "entrepreneur" ? <Ventures /> : <AdvisorPage />}
-					</div>
 				</div>
 			}
 		/>

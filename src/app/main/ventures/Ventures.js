@@ -15,15 +15,9 @@ function VenturesPage(props) {
 	console.log(user);
 
 	return (
-
-
-
-
 		<div className="justify-center">
 			{(user.ventures.length > 0) ? <VentureView venture={user.ventures[0]} /> : <VentureForm />}
 		</div>
-
-
 	);
 }
 

@@ -89,8 +89,8 @@ function VentureForm(props) {
 
 
 	return (
-		< div className="max-w-lg" >
-			<Typography variant="h3" color="inherit" className="font-700 leading-tight mb-32">
+		< div className="w-6/12 mx-auto">
+			<Typography variant="h3" color="inherit" className="font-700">
 				Add your venture
 			</Typography>
 			{isWaitingForRequest ? <CircularProgress /> : <Formsy
@@ -104,6 +104,21 @@ function VentureForm(props) {
 					type="text"
 					name="companyName"
 					label="Company Name"
+					validations={{
+						minLength: 1
+					}}
+					validationErrors={{
+						minLength: 'Min character length is 1'
+					}}
+					variant="outlined"
+					required
+				/>
+
+				<TextFieldFormsy
+					className="mb-16"
+					type="text"
+					name="entrepreneurFounderName"
+					label="Founder Full Name"
 					validations={{
 						minLength: 1
 					}}
@@ -308,6 +323,224 @@ function VentureForm(props) {
 						minLength: 'You need to select at least 1'
 					}}
 					required
+				/>
+
+				<TextFieldFormsy
+					className="mb-16"
+					type="text"
+					name="whatProblemAreYouSolving"
+					label="What customer problem are you solving?"
+					multiline
+					rows={3}
+					validations={{
+						minLength: 4
+					}}
+					validationErrors={{
+						minLength: 'Min character length is 4'
+					}}
+					variant="outlined"
+					required
+				/>
+
+				<TextFieldFormsy
+					className="mb-16"
+					type="text"
+					name="describeProductOrServiceAndHowItSolvesProblem"
+					label="Please describe your product or service and how it solves the customer problem."
+					multiline
+					rows={3}
+					validations={{
+						minLength: 4
+					}}
+					validationErrors={{
+						minLength: 'Min character length is 4'
+					}}
+					variant="outlined"
+					required
+				/>
+
+				<TextFieldFormsy
+					className="mb-16"
+					type="text"
+					name="targetCustomersAndMarketSize"
+					label="Please describe your target customers and target market size."
+					multiline
+					rows={3}
+					validations={{
+						minLength: 4
+					}}
+					validationErrors={{
+						minLength: 'Min character length is 4'
+					}}
+					variant="outlined"
+					required
+				/>
+
+				<TextFieldFormsy
+					className="mb-16"
+					type="text"
+					name="competitorsAndCompetitiveAdvantage"
+					label="List your competitors and describe your competitive advantage."
+					multiline
+					rows={3}
+					validations={{
+						minLength: 4
+					}}
+					validationErrors={{
+						minLength: 'Min character length is 4'
+					}}
+					variant="outlined"
+					required
+				/>
+
+				<TextFieldFormsy
+					className="mb-16"
+					type="text"
+					name="tractionReachedSoFar"
+					label="Please describe the traction your company has reached so far?"
+					multiline
+					rows={3}
+					validations={{
+						minLength: 4
+					}}
+					validationErrors={{
+						minLength: 'Min character length is 4'
+					}}
+					variant="outlined"
+					required
+				/>
+
+				<TextFieldFormsy
+					className="mb-16"
+					type="text"
+					name="founderDetailsRolesExperienceExpertise"
+					label="List all founders details, including their roles, experience and expertise."
+					multiline
+					rows={3}
+					validations={{
+						minLength: 4
+					}}
+					validationErrors={{
+						minLength: 'Min character length is 4'
+					}}
+					variant="outlined"
+					required
+				/>
+
+				<TextFieldFormsy
+					className="mb-16"
+					type="text"
+					name="averageMonthlyRevenuePast6Months"
+					label="What has been your average monthly revenue in the past 6 months?"
+					multiline
+					rows={3}
+					validations={{
+						minLength: 4
+					}}
+					validationErrors={{
+						minLength: 'Min character length is 4'
+					}}
+					variant="outlined"
+					required
+				/>
+
+				<TextFieldFormsy
+					className="mb-16"
+					type="text"
+					name="priorExternalFunding"
+					label="Have you received any prior external funding? If yes, please share details of the funding received"
+					multiline
+					rows={3}
+					validations={{
+						minLength: 4
+					}}
+					validationErrors={{
+						minLength: 'Min character length is 4'
+					}}
+					variant="outlined"
+					required
+				/>
+
+				<TextFieldFormsy
+					className="mb-16"
+					type="text"
+					name="moneySeekedInNextRound"
+					label="How much money are you seeking to raise in your next round?"
+					multiline
+					rows={3}
+					validations={{
+						minLength: 4
+					}}
+					validationErrors={{
+						minLength: 'Min character length is 4'
+					}}
+					variant="outlined"
+					required
+				/>
+
+				<TextFieldFormsy
+					className="mb-16"
+					type="text"
+					name="haveYouSecuredInvestorCommitmentsForNextRound"
+					label="Have you already secured investor commitments for your next round?"
+					multiline
+					rows={3}
+					validations={{
+						minLength: 4
+					}}
+					validationErrors={{
+						minLength: 'Min character length is 4'
+					}}
+					variant="outlined"
+					required
+				/>
+
+				<TextFieldFormsy
+					className="mb-16"
+					type="text"
+					name="assistanceRequiredFromQalisaHub"
+					label="What assistance are you requiring Qalisa Hub to provide you?"
+					multiline
+					rows={3}
+					validations={{
+						minLength: 4
+					}}
+					validationErrors={{
+						minLength: 'Min character length is 4'
+					}}
+					variant="outlined"
+					required
+				/>
+
+				<TextFieldFormsy
+					className="mb-16"
+					type="text"
+					name="participatedInAcceleratorIncubatorPitchCompetitionsCahllenges"
+					label=" Did you participate in any accelerator or incubator programs, pitch competitions, challenges or other startup programs? Please list."
+					multiline
+					rows={3}
+					validations={{
+						minLength: 4
+					}}
+					validationErrors={{
+						minLength: 'Min character length is 4'
+					}}
+					variant="outlined"
+					required
+				/>
+
+				<TextFieldFormsy
+					className="mb-16"
+					type="text"
+					name="howDidYouHearAboutQalisa"
+					label="How did you hear about Qalisa Hub?"
+					validations={{
+						minLength: 4
+					}}
+					validationErrors={{
+						minLength: 'Min character length is 4',
+					}}
+					variant="outlined"
 				/>
 
 				<TextFieldFormsy
