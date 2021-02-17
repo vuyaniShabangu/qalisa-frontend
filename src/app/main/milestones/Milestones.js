@@ -157,7 +157,7 @@ function MilestonesPage(props) {
 								</Modal>
 
 								<Typography variant="h6" gutterBottom>
-									Here the milestones have been assigned to you:
+									Here are the milestones that have been assigned to you:
       							</Typography>
 								<TableContainer component={Paper} className={classes.table}>
 									<Table aria-label="simple table">
@@ -198,7 +198,7 @@ function MilestonesPage(props) {
 								</TableContainer>
 
 								<Typography variant="h6" gutterBottom>
-									Here the milestones milestones that you have assigned:
+									Here are the milestones milestones that you have assigned to others:
       							</Typography>
 								<TableContainer component={Paper} className={classes.table}>
 									<Table aria-label="simple table">

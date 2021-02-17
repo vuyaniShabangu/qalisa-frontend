@@ -89,7 +89,7 @@ function VentureForm(props) {
 
 
 	return (
-		< div className="w-6/12 mx-auto">
+		< div className="w-full sm:w-1/2">
 			<Typography variant="h3" color="inherit" className="font-700">
 				Add your venture
 			</Typography>

@@ -2,11 +2,8 @@ import FusePageSimple from '@fuse/core/FusePageSimple';
 import { makeStyles } from '@material-ui/core/styles';
 import React from 'react';
 import { useSelector } from 'react-redux';
-import FuseAnimate from '@fuse/core/FuseAnimate';
-import Typography from '@material-ui/core/Typography';
 import AdvisorPage from '../advisorApplication/Advisor';
 import Ventures from '../ventures/Ventures';
-import clsx from 'clsx';
 
 const useStyles = makeStyles(theme => ({
 	layoutRoot: {}
