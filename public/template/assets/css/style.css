@@ -504,9 +504,7 @@ ul {
 
 /* line 125, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_common.scss */
 
-li {
-    list-style: none;
-}
+
 
 
 /* line 129, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_common.scss */
@@ -691,7 +689,7 @@ hr {
 /* line 253, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_common.scss */
 
 .btn {
-    background: #ff2143;
+    background: #ff911f;
     padding: 27px 44px;
     text-transform: uppercase;
     font-family: "Roboto", sans-serif;
@@ -3687,15 +3685,15 @@ hero-btn {
 /* line 797, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_common.scss */
 
 .section-padding30 {
-    padding-top: 195px;
-    padding-bottom: 170px;
+    padding-top: 75px;
+    padding-bottom: 75px;
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1600px) {
     /* line 797, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_common.scss */
     .section-padding30 {
-        padding-top: 195px;
-        padding-bottom: 170px;
+        padding-top: 75px;
+        padding-bottom: 75px;
     }
 }
 
@@ -5221,7 +5219,7 @@ hero-btn {
 .support-company-area .right-caption .support-caption p.pera-top {
     font-size: 20px;
     font-weight: 500;
-    color: #fff;
+    color: #092c3f;
     font-family: "Roboto", sans-serif;
 }
 
@@ -5230,7 +5228,7 @@ hero-btn {
 
 .support-company-area .right-caption .support-caption p {
     font-size: 15px;
-    color: #cecece;
+    color: #092c3f;
 }
 
 
@@ -5450,7 +5448,7 @@ hero-btn {
 /* line 3, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_wantTowork.scss */
 
 .wantToWork-area .wantToWork-caption h2 {
-    color: #fff;
+    color: #092c3f;
     font-size: 48px;
     font-weight: 700;
     line-height: 1.5;
@@ -5633,6 +5631,11 @@ hero-btn {
 /* line 81, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_team.scss */
 
 .about-details .about-details-cap p {
+    color: #464d65;
+    font-size: 14px;
+}
+
+.about-details .about-details-cap ul li {
     color: #464d65;
     font-size: 14px;
 }
@@ -6071,14 +6074,14 @@ hero-btn {
 /* line 133, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_footer.scss */
 
 .footer-area .footer-bottom .footer-copy-right p i {
-    color: #ff0000;
+    color: #ff911f;
 }
 
 
 /* line 136, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_footer.scss */
 
 .footer-area .footer-bottom .footer-copy-right p a {
-    color: #ff0000;
+    color: #ff911f;
 }
 
 
