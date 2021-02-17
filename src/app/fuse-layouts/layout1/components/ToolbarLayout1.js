@@ -12,6 +12,8 @@ import { useSelector } from 'react-redux';
 import { selectToolbarTheme } from 'app/store/fuse/settingsSlice';
 import FullScreenToggle from '../../shared-components/FullScreenToggle';
 import LanguageSwitcher from '../../shared-components/LanguageSwitcher';
+import Link from '@material-ui/core/Link';
+
 
 const useStyles = makeStyles(theme => ({
 	root: {}
@@ -45,13 +47,9 @@ function ToolbarLayout1(props) {
 					</div>
 
 					<div className="flex items-center px-16">
-						<LanguageSwitcher />
-
-						<FullScreenToggle />
-
-						<FuseSearch />
-
-						<QuickPanelToggleButton />
+						<Link href="/logout">
+							Logout
+      					</Link>
 					</div>
 
 					{config.navbar.display && config.navbar.position === 'right' && (
